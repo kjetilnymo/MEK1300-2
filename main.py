@@ -1,4 +1,4 @@
-from random import random, randint, uniform 
+from random import randint
 
 print("Number guessing game\n")
 
