@@ -1,12 +1,14 @@
 from random import randint
 
-print("Number guessing game\n")
+print("") 
+print("Number guessing game: Guess the number between 1-100. You have 5 tries.")
 
 answer1 = "YES" 
 
 answer = "YES"
  
 while answer == answer1:
+    print("")
     number = randint(1, 100) 
     count = 0 
     while count < 5: 
@@ -33,7 +35,6 @@ while answer == answer1:
 
         
     
-    answer = str(input("Do you want to play again? Type 'YES' or 'NO'. ")).upper()
+    answer = str(input("Do you want to play again? Type 'YES' or 'NO': ")).upper()
 else:
     print("Okey, see you again.")
-
