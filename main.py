@@ -1,4 +1,4 @@
-print(" Number guessing game\n")
+print("Number guessing game\n")
 from random import random, randint, uniform 
 
 
