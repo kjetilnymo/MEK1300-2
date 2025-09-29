@@ -38,5 +38,3 @@ while answer == answer1:
 else:
     print("Okey, see you again.")
 
-
-#test
