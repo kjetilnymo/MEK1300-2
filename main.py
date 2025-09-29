@@ -33,6 +33,8 @@ else:
 
 #Alternativ kode
 
+"""
+
 from random import randint
 
 answer = "YES"
@@ -63,3 +65,5 @@ while answer == "YES":
     answer = input("Do you want to play again? Type 'YES' or 'NO': ").upper()
 
 print("Okay, see you again.")
+
+"""
