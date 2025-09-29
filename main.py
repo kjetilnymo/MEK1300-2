@@ -3,7 +3,6 @@ from random import randint
 print("Number guessing game\n")
 
 answer1 = "YES" 
-answer2 = "NO" 
 
 answer = "YES"
  
