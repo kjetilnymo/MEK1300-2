@@ -9,17 +9,17 @@ answer2 = "NO"
 answer = "YES"
  
 while answer == answer1:
-    d1 = randint(1, 100) 
+    number = randint(1, 100) 
     count = 0 
     while count < 5: 
         guess1 = int(input("Guess a number: ")) 
         count += 1 
         
-        if guess1 == d1: 
+        if guess1 == number: 
             print("Congratulations! You guessed the number in", count, "attempt(s).")
             break
         
-        elif guess1 < d1: 
+        elif guess1 < number: 
             print("The number is higher") 
         
         else:
@@ -33,44 +33,6 @@ while answer == answer1:
     answer = str(input("Do you want to play again? Type 'YES' or 'NO'. ")).upper()
 else:
     print("Okey, see you again.")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
