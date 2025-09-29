@@ -13,7 +13,7 @@ while answer == answer1:
     while count < 5: 
         bad_guess = input("Guess a number: ")
         if not bad_guess.isdigit() or not (1 <= int(bad_guess) <= 100):
-            print("Invalid input. You have to guess a number between 1-100.")
+            print("Invalid input. You have to guess a number between 1-100.", "\n")
             continue
         guess1 = int(bad_guess)
 
