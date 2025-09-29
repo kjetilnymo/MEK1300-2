@@ -1,4 +1,6 @@
+print(" Number guessing game\n")
 from random import random, randint, uniform 
+
 
 
 answer1 = "YES" 
@@ -22,12 +24,59 @@ while answer == answer1:
         
         else:
             print("The number is lower") 
+        print("Attempts remaining:", 5 - count,"\n")
         
         if count == 5: print("Sorry! You did not manage to guess the number. You have reached the guessing limit. The number was:", d1) 
+
+        
     
     answer = str(input("Do you want to play again? Type 'YES' or 'NO'. ")).upper()
 else:
     print("Okey, see you again.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
