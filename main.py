@@ -28,3 +28,38 @@ while answer == answer1:
     answer = str(input("Do you want to play again? Type 'YES' or 'NO'. ")).upper()
 else:
     print("Okey, see you again.")
+
+
+
+#Alternativ kode
+
+from random import randint
+
+answer = "YES"
+
+while answer == "YES":
+    number = randint(1, 100)
+    attempts = 0
+
+    while attempts < 5:
+        guess = int(input("Guess a number between 1 and 100: "))
+        attempts += 1
+
+        if guess == number:
+            print(f"Congratulations! You guessed the number in {attempts} attempt(s).")
+            print("The number was:", number)
+            break
+        elif guess < number:
+            print("The number is higher.")
+        else:
+            print("The number is lower.")
+
+        print("Attempts remaining:", 5 - attempts)
+
+        if attempts == 5:
+            print("Sorry! You did not manage to guess the number. You have reached the guessing limit.")
+            print("The number was:", number)
+
+    answer = input("Do you want to play again? Type 'YES' or 'NO': ").upper()
+
+print("Okay, see you again.")
