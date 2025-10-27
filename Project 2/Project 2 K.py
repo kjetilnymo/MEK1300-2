@@ -65,7 +65,7 @@ def wrong_answers():
         print("c:", questions[key]["c"])
         print("d:", questions[key]["d"],"\n")
 
-        print("Your guess was:", "answer")
+        print("Your guess was:", wrong_storage[key])
         print("The correct answer was:", questions[key]["correct"])
         print("")
 
