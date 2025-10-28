@@ -19,6 +19,7 @@ Password = "Python"
 
 def login_info():
     while True:
+        print("Login: ")
         username = input("Enter the username: ")
         password = input("Enter the password: ")
         if username == Username and password == Password:
@@ -46,7 +47,7 @@ def question():
         print("d:", questions[key]["d"],"\n")
 
         while True:
-            answer = input("What is the answer? Type 'a', 'b', 'c' or 'd': \n").lower().strip()
+            answer = input("Enter your answer (a, b, c, d): \n").lower().strip()
             if answer in ["a", "b", "c", "d"]:
                 break
             else:
