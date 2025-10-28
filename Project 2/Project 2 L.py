@@ -39,13 +39,22 @@ def question():
         print("c:", questions[key]["c"])
         print("d:", questions[key]["d"], "\n")
 
+        # Sjekk for gyldig svar
         answer = input("What is the answer? Type 'a', 'b', 'c' or 'd': ").lower()
+        while answer not in ["a", "b", "c", "d"]:
+            print("Invalid input. Please type only 'a', 'b', 'c', or 'd'.\n")
+            answer = input("Try again: ").lower()
+
         print()
         if answer == questions[key]["correct"]:
             correct_answers += 1
         else:
             wrong_storage[key] = answer
-    print("Your score was:", correct_answers, "/ 10!")
+
+    # Når quizen er ferdig:
+    print("Quiz complete!\n")
+    print("Number of correct answers:", correct_answers)
+    print("Number of incorrect answers:", len(wrong_storage))
     wrong_answers()
 
 
