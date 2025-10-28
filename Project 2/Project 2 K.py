@@ -40,7 +40,7 @@ def question():
     wrong_storage.clear()
     correct_answers = 0
     for key in questions:
-        print(questions[key]["question"],"\n")
+        print(f"\n{questions[key]['question']}\n")
         print("a:", questions[key]["a"])
         print("b:", questions[key]["b"])
         print("c:", questions[key]["c"])
