@@ -12,29 +12,31 @@ questions = {
     "Q10" : {"question" : "From which Norwegian city did the world's famous composer Edvard Grieg come?", "a" : "Oslo", "b" : "Bergen", "c" : "Stavanger", "d" : "Tromsø", "correct" : "b"},
 }
 
-login_info = dict()
+login_data = dict()
 
 Username = "MEK1300"
 Password = "Python"
 
-def login():
+def login_info():
     while True:
         username = input("Enter the username: ")
         password = input("Enter the password: ")
         if username == Username and password == Password:
-            login_info[username] = password
+            login_data[username] = password
             break
         else:
             print("")
             print("Invalid username and/or password. Try again!", "\n")
+    print("Login successful!\n")
     question()
 
 
 def main():
-    login()
+    login_info()
     
     
 def question():
+    wrong_storage.clear()
     correct_answers = 0
     for key in questions:
         print(questions[key]["question"],"\n")
@@ -43,13 +45,22 @@ def question():
         print("c:", questions[key]["c"])
         print("d:", questions[key]["d"],"\n")
 
-        answer = input("What is the answer? Type; 'a', 'b', 'c' or 'd': ").lower()
-        print("")
+        while True:
+            answer = input("What is the answer? Type 'a', 'b', 'c' or 'd': \n").lower().strip()
+            if answer in ["a", "b", "c", "d"]:
+                break
+            else:
+                print("Invalid input! Please type only 'a', 'b', 'c' or 'd'.\n")
+
+        print("")  # spacing for readability
         if answer == questions[key]["correct"]:
             correct_answers += 1
         else:
             wrong_storage[key] = answer
-    print("Your score was:", correct_answers, "/ 10!")
+
+    print("-" * 60, "\n")
+    print(f"Your score was: {correct_answers} / {len(questions)}!")
+    
     wrong_answers()
     
 
@@ -57,17 +68,17 @@ def question():
 wrong_storage = dict()
 
 def wrong_answers():
-    print("You got these questions wrong:", "\n")
-    for key in wrong_storage:
-        print(questions[key]["question"],"\n")
-        print("a:", questions[key]["a"])
-        print("b:", questions[key]["b"])
-        print("c:", questions[key]["c"])
-        print("d:", questions[key]["d"],"\n")
-
-        print("Your guess was:", wrong_storage[key])
-        print("The correct answer was:", questions[key]["correct"])
-        print("")
+    if len(wrong_storage) == 0:
+        print("Congratulations! You got all answers correct!")
+    else:    
+        print("You got these", len(wrong_storage), "questions wrong:", "\n")
+        for key in wrong_storage:
+            print(questions[key]["question"])
+            wrong_letter = wrong_storage[key]
+            correct_letter = questions[key]["correct"]
+            print("Your guess was:", questions[key][wrong_letter])
+            print("The correct answer was:", questions[key][correct_letter])
+            print("\n")
 
 
 main()
